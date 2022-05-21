@@ -1,0 +1,10 @@
+spack:
+  specs:
+  - lammps@20210310
+  container:
+    format: docker
+    images:
+      os: ubuntu:20.04
+      spack:
+        ref: v0.17.2
+
