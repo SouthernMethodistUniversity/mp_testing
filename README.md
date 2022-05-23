@@ -8,6 +8,40 @@
 - Gaussian
 - VASP
 - CRYSTAL
+- Q-Chem
+- Quantum Espresso
+
+## Analysis Tools
+- Memory profiling
+- Performance profiling
+
+## Libraries/APIs
+- Raja
+- Magma
+- heFFTe
+- Pandas
+- NumPy
+- TensorFlow
+- PyTorch
+- DALI
+
+## Languages
+- C
+- C++
+- Python
+- Some custom layer in C++/CUDA
+- Fortran
+- CUDA Fortran
+- Julia
+
+## Molecular Dynamics
+- OpenMM
+- AMBER
+- Desmond
+- GROMACS
+- Mentioned MIC modes?
+- NGC for Keras/TF and Pytorch
+
 
 ## Issues
 
