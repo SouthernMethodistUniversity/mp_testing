@@ -10,5 +10,5 @@
 enroot start ./lammps_20210310_cpu.sqsh \
 lmp\
  -var x 8 -var y 4 -var z 8\
- -in lammps_gpu.in
+ -in lammps.in
 
