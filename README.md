@@ -53,3 +53,10 @@
 - Spack-blessed NVIDIA container fails to build due to public key error. See: `01_spack/spack_lammps.yaml`.
 - `export ENROOT_MOUNT_HOME=1` to bind $HOME.
 - Default flags and `target=zen2` gave LAMMPS run times of 4:44, while `target=zen2 cppflags=-O3`
+
+## Maybe Useful
+- https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-product-literature/gpu-applications-catalog.pdf
+- https://docs.nvidia.com/deeplearning/frameworks/support-matrix/index.html
+- https://docs.nvidia.com/deeplearning/dali/user-guide/docs/index.html
+- https://secure.cci.rpi.edu/wiki/
+
