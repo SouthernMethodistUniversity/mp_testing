@@ -1,9 +1,9 @@
 # Notes
 
 ## Applications
-- LAMMPS
+- LAMMPS (NGC)
 - AMBER
-- NAMD
+- NAMD (NGC)
 - OpenMM
 - Gaussian
 - VASP
