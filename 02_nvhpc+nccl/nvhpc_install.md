@@ -1,13 +1,17 @@
 
 # nvhpc
 
+```
 mkdir ~/testing/nvidia
 cd ~/testing/nvidia
+```
 
 ## download multi-cuda version (10.2, 11.0, 11.6)
 
+```
 wget https://developer.download.nvidia.com/hpc-sdk/22.3/nvhpc_2022_223_Linux_x86_64_cuda_multi.tar.gz
 tar xpzf nvhpc_2022_223_Linux_x86_64_cuda_multi.tar.gz
+```
 
 ## set install options
 
@@ -20,7 +24,9 @@ export NVHPC_DEFAULT_CUDA=11.0
 
 ## install
 
+```
 ./nvhpc_2022_223_Linux_x86_64_cuda_multi/install
+```
 
 ## create LMOD modules
 
