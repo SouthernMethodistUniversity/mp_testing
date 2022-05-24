@@ -53,6 +53,8 @@
 - Spack-blessed NVIDIA container fails to build due to public key error. See: `01_spack/spack_lammps.yaml`.
 - `export ENROOT_MOUNT_HOME=1` to bind $HOME.
 - Default flags and `target=zen2` gave LAMMPS run times of 4:44, while `target=zen2 cppflags=-O3`
+- Running containers or non-hpc-x MPI produces warnings about `Unknown interface name` / 
+  `An invalid value was given for btl_tcp_if_include`. It appears not to see the Mellanox / IB correctly?
 
 ## Maybe Useful
 - https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-product-literature/gpu-applications-catalog.pdf
