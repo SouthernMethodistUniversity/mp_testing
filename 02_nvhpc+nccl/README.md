@@ -52,6 +52,30 @@ Jobs where run using the `container_job.sbatch` and `metal_job.sbatch` scripts.
 
 Note, the container job produces many warnings/errors about invalid interface names and that it can't find the NUMA libs, but it seems to work fine.
 
+### Container warnings and errors
+
+```
+WARNING: An invalid value was given for btl_tcp_if_include.  This
+value will be ignored.
+
+  Local host: bcm-dgxa100-0012
+  Value:      enp225s0f1
+  Message:    Unknown interface name
+```
+
+and
+
+```
+[LOG_CAT_SBGP] libnuma.so: cannot open shared object file: No such file or directory
+[LOG_CAT_SBGP] Failed to dlopen libnuma.so. Fallback to GROUP_BY_SOCKET manual.
+```
+
+### Metal warnings and errors
+
+No errors or warnings if using the HPC-X mpi. If using the default OMPI 3.1.5, I get the same 
+unknown interface name warnings. I haven't been able to get OMPI 4.0.5 to work.
+
+
 ## Results
 
 The results reported here take the `in-place` bus bandwidth results for the largest size run.
