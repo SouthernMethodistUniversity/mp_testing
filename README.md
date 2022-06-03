@@ -62,3 +62,5 @@
 - https://docs.nvidia.com/deeplearning/dali/user-guide/docs/index.html
 - https://secure.cci.rpi.edu/wiki/
 
+## Things we need to plan for
+- How and when do we decide we're updating Nvidia Drivers / Cuda. I think we need to be very clear about this if we're not going to maintain the latest and greatest. (we're currently on 11.4, but 11.7 and associated drivers are available)
