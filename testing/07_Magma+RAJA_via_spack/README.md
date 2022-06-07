@@ -92,3 +92,14 @@ cmake \
   ..
 make -j16
 ```
+
+### Running
+
+The test can be run like 
+
+```
+srun -N 1 --ntasks-per-node=1 --cpus-per-task=256 --gpus-per-task=1 ./bin/raja-perf.exe -sp
+```
+
+This does show that the RAJA interfaces to `OpenMP` and `CUDA` appear to be working. 
+However, tests do not complete successfully. Some of this seems to be MPI errors (see [06_mpi](../06_mpi)).
