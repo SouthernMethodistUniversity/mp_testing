@@ -1,6 +1,6 @@
 # Notes
 
-**All code in this repo is for testing. The code may not work and may change.**
+**All code in this repo is for testing. The code may not work and may change. Pull requests and issues welcome.**
 
 ## Usage Example
 
