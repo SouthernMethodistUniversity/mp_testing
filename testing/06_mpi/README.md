@@ -8,7 +8,7 @@ wget https://content.mellanox.com/hpc/hpc-x/v2.11/hpcx-v2.11-gcc-MLNX_OFED_LINUX
 tar -xvf hpcx-v2.11-gcc-MLNX_OFED_LINUX-5-ubuntu20.04-cuda11-gdrcopy2-nccl2.11-x86_64.tbz
 ```
 
-Then convert the ``hpcx_init.sh`` into a `lua` module. See [hpcx_init.lua](hpcx_init.lua). 
+Then convert the ``hpcx-init.sh`` into a `lua` module. See [hpcx-init.lua](hpcx-init.lua). 
 The conversion utility from lmod didn't do a complete job, so I just manually converted.
 
 ## Testing
