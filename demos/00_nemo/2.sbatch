@@ -10,10 +10,9 @@
 # Run Python script inside container
 # Flags:
 # --no-container-remap-root : Set actual user inside container (not root)
-# --container-mount-home    : Mount $HOME inside container
-# --container-workdir       : Set $PWD to $SLURM_SUBMIT_DIR inside container
 # --container-image         : Source container image
 # --no-container-entrypoint : Do not use image entrypoint
+# --container-mounts        : Mount NeMo repo as workspace inside container
 # bash -l -c <command>      : Command to run inside container
 
 srun\
