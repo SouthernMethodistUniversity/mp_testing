@@ -13,7 +13,7 @@ The conversion utility from lmod didn't do a complete job, so I just manually co
 
 ## Testing
 
-The test is simple *hello world* program with an option to do a reduce operation. See the (src folder)[src].
+The test is simple *hello world* program with an option to do a reduce operation. See the [src folder](src).
 
 For a small number of tasks this program appears to work. For example,
 
