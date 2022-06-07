@@ -2,6 +2,14 @@
 
 **All code in this repo is for testing. The code may not work and may change.**
 
+## Usage Example
+
+```sh
+git clone https://github.com/SouthernMethodistUniversity/mp_testing.git
+cd mp_testing/demos/00_nemo
+./submit_jobs.sh
+```
+
 ## Applications
 - LAMMPS (NGC)
 - AMBER
