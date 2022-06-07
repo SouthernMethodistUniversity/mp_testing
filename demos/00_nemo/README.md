@@ -1,6 +1,6 @@
 # NeMo Example
 
-**Currently, the example script privded doesn't run successfully.**
+**Currently, the example script provided doesn't run successfully.**
 
 ## Submit jobs
 
