@@ -42,3 +42,9 @@ fails.
 Note that the extra exports are there to try to produce useful error logs, but
 are not necessary to reproduce the errors.
 An example of the errors can be seen in [mpi_errors.out](mpi_errors.out)
+
+## Notes
+
+The failures *might* be related to packet drops and configurations based on these github tickets:
+- https://github.com/openucx/ucx/issues/6522
+- https://github.com/openucx/ucx/issues/6000#issuecomment-747641976
