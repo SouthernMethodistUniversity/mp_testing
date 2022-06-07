@@ -20,7 +20,6 @@ srun\
  --container-image ${SLURM_SUBMIT_DIR}/nemo-22.06.sqsh\
  --no-container-entrypoint\
  --container-mounts ${SLURM_SUBMIT_DIR}/NeMo:/workspace\
- bash -l -c\
- 'CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python3\
+ bash -l -c 'python3\
  /workspace/examples/nlp/text_classification/text_classification_with_bert.py'
 
