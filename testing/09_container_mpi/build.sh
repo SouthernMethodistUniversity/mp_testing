@@ -1,18 +1,15 @@
 #!/usr/bin/env zsh
 
-# Symlink for spack.yaml
-ln -s spack_lammps.yaml spack.yaml
+# Docker image tag
+tag="mpi:hostnames"
 
-# Generate Dockerfile
-spack containerize > Dockerfile
+# Enroot image filename from Docker image tag
+sqsh=${tag//:/_}.sqsh
 
 # Build using Docker
-docker build -t lammps_spack:20210310 .
+docker build -t ${tag}
 
 # Convert from local Docker daemon using enroot
-sudo enroot import -o lammps_20210310_cpu.sqsh dockerd://lammps_spack:20210310
-sudo chown $USER:$USER lammps_20210310_cpu.sqsh
-
-# Run image using enroot
-enroot start lammps_20210310_cpu.sqsh
+sudo enroot import -o ${sqsh} dockerd://${tag}
+sudo chown $USER:$USER ${sqsh}
 
