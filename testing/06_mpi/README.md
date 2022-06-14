@@ -48,3 +48,41 @@ An example of the errors can be seen in [mpi_errors.out](mpi_errors.out)
 The failures *might* be related to packet drops and configurations based on these github tickets:
 - https://github.com/openucx/ucx/issues/6522
 - https://github.com/openucx/ucx/issues/6000#issuecomment-747641976
+
+# HPC-X via the Nvidia HPC Toolkit
+
+Install the latest Nvidia HPC Toolkit (22.5) in the following way seems to work better than anything I've tried.
+
+```
+cd /hpc/superpod/testing/nvidia/
+wget https://developer.download.nvidia.com/hpc-sdk/22.5/nvhpc_2022_225_Linux_x86_64_cuda_11.7.tar.gz
+tar xpzf nvhpc_2022_225_Linux_x86_64_cuda_11.7.tar.gz
+. /hpc/superpod/testing/spack/share/spack/setup-env.sh
+module load gcc-10.3.0-gcc-9.4.0-5skxfbd 
+NVHPC_SILENT=true NVHPC_INSTALL_DIR=/hpc/superpod/testing/nvidia/hpc_sdk_22.5 NVHPC_INSTALL_TYPE=single NVHPC_STDPAR_CUDACC=80 ./nvhpc_2022_225_Linux_x86_64_cuda_11.7/install
+```
+
+The default MPI (OpenMPI 3.1.5) produces lots of warnings. 
+These appear to be related to the fact that this MPI does not have `ucx` and other components.
+However, the installed version of HPC-X does seem to work.
+
+This is accessible in the following way:
+
+```
+. /hpc/superpod/testing/spack/share/spack/setup-env.sh
+module use /hpc/superpod/testing/nvidia/hpc_sdk_22.5/Linux_x86_64/22.5/comm_libs/hpcx/hpcx-2.11/modulefiles/
+module use /hpc/superpod/testing/nvidia/hpc_sdk_22.5/modulefiles
+
+module load gcc-10.3.0-gcc-9.4.0-5skxfbd
+module load nvhpc/22.5
+module load hpcx-ompi
+```
+
+** Note
+It is also necessary to set 
+
+```
+export UCX_NET_DEVICES=mlx5_0:1,mlx5_1:1,mlx5_2:1,mlx5_3:1,mlx5_6:1,mlx5_7:1,mlx5_8:1,mlx5_9:1
+```
+
+which is likely in indication of a configuration error.
