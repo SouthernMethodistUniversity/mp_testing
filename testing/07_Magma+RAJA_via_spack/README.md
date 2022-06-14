@@ -60,7 +60,7 @@ Clone the RAJAPerf suite:
 ```
 git clone --recursive https://github.com/llnl/RAJAPerf.git
 cd RAJAPerf/
-git checkout v0.12.0
+git checkout develop
 git submodule update --recursive
 ```
 
