@@ -14,7 +14,6 @@ git checkout releases/v0.18
 spack install gcc@10.3.0
 spack load gcc-10.3.0-gcc-9.4.0-5skxfbd 
 spack compiler find
-spack install llvm +cuda cuda_arch=80 ^cuda@11.4
 spack install magma%gcc@10.3.0 +cuda cuda_arch=80 ^cuda@11.4
 spack install raja%gcc@10.3.0 +cuda +tests cuda_arch=80 ^cuda@11.4
 spack module lmod refresh
@@ -24,7 +23,8 @@ spack module lmod refresh
 
 - I deleted all references to `/tmp/appmgr/spack-stage/...` from the `pkgconfig`
   of Magma. This appears to be a build error as they are build time paths and not
-  relavent for the install. I have opened a (ticket with Spack)[https://github.com/spack/spack/issues/31002]. 
+  relavent for the install. I have opened a [ticket with Spack](https://github.com/spack/spack/issues/31002)
+  even though it is not really a Spack problem. 
   Possibily related https://bitbucket.org/icl/magma/issues/52/issues-with-pkgconfig-file-using-spack
 - I do not understand why the lmod refresh is needed, but commands like 
 
@@ -67,11 +67,13 @@ git submodule update --recursive
 Load modules for building
 
 ```
-export MODULEPATH=/hpc/superpod/testing/modules
+# for HPC-X MPI Bundled with NVHPC (currently the best working MPI)
+module use /hpc/superpod/testing/nvidia/hpc_sdk_22.5/Linux_x86_64/22.5/comm_libs/hpcx/hpcx-2.11/modulefiles/
+# for Spack installs
 . /hpc/superpod/testing/spack/share/spack/setup-env.sh
 module load gcc-10.3.0-gcc-9.4.0-5skxfbd 
 source <( spack module tcl loads --dependencies raja)
-module load mpi/hpcx-direct-install 
+module load hpcx 
 ```
 
 Configure and build:
@@ -81,7 +83,7 @@ mkdir build
 cd build
 cmake \
   -DCMAKE_BUILD_TYPE=Release \
-  -DMPI_CXX_COMPILER=$(which MPICXX) \
+  -DMPI_CXX_COMPILER=$(which mpic++) \
   -DCMAKE_CXX_COMPILER=$(which g++) \
   -DBLT_CXX_STD=c++14 \
   -DENABLE_MPI=On \
@@ -90,7 +92,7 @@ cmake \
   -DCUDA_ARCH=sm_80 \
   -DCMAKE_CUDA_ARCHITECTURES=80 \
   ..
-make -j16
+make -j
 ```
 
 ### Running
@@ -98,8 +100,12 @@ make -j16
 The test can be run like 
 
 ```
-srun -N 1 --ntasks-per-node=1 --cpus-per-task=256 --gpus-per-task=1 ./bin/raja-perf.exe -sp
+# Make sure MPI uses the correct interfaces. (this should be fixed at a system level at some point)
+export UCX_NET_DEVICES=mlx5_0:1,mlx5_1:1,mlx5_2:1,mlx5_3:1,mlx5_6:1,mlx5_7:1,mlx5_8:1,mlx5_9:1
+
+# run
+srun -N 2 --ntasks-per-node=8 --cpus-per-task=16 --gres=gpu:8 ./bin/raja-perf.exe -sp -ek Basic_INDEXLIST
 ```
 
-This does show that the RAJA interfaces to `OpenMP` and `CUDA` appear to be working. 
-However, tests do not complete successfully. Some of this seems to be MPI errors (see [06_mpi](../06_mpi)).
+I have exclude the `Basic_INDEXLIST` test above. 
+The Base_CUDA tests hang on it (I didn't investigate, but it runs fine on a single task.)
