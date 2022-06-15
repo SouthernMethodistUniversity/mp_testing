@@ -107,7 +107,7 @@ export UCX_NET_DEVICES=mlx5_0:1,mlx5_1:1,mlx5_2:1,mlx5_3:1,mlx5_6:1,mlx5_7:1,mlx
 srun -N 2 --ntasks-per-node=8 --cpus-per-task=16 --gres=gpu:8 ./bin/raja-perf.exe -sp -ek Basic_INDEXLIST
 ```
 
-A sample of the results can be seen in the [sample_output](sample_output) folder.
+A sample of the results can be seen in the [sample_results](sample_results) folder.
 
 I have exclude the `Basic_INDEXLIST` test above. 
 The Base_CUDA tests hang on it (I didn't investigate, but it runs fine on a single task.)
