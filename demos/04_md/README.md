@@ -1,5 +1,13 @@
 # Working Version of NVIDIA Demo
 
+## Batch Job
+
+Simply run `./submit_jobs.sh`, which will submit up to two jobs. The first job,
+if needed, will convert the NGC Docker image to an enroot image and extract the
+GROMACS input data. The second job runs the simulation.
+
+## Interactive Job
+
 ```
 enroot import "docker://nvcr.io#hpc/gromacs:2022.1"
 srun -N 1 -G 8 --cpus-per-gpu=16 --container-image=./hpc+gromacs+2022.1.sqsh --container-mounts=$PWD:/data --pty bash
