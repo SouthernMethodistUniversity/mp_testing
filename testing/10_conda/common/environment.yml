@@ -1,0 +1,17 @@
+name: null
+
+channels:
+- pytorch
+- conda-forge
+- defaults
+
+# TODO: versions?
+# TODO: what is a good set of base packages?
+dependencies:
+- python=3.9
+- pip
+- jupyterlab
+- numpy
+- scipy
+- matplotlib
+- pandas
