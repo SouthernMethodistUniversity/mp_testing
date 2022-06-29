@@ -1,0 +1,155 @@
+--2022-06-29 15:58:31--  https://raw.githubusercontent.com/horovod/horovod/master/examples/pytorch/pytorch_synthetic_benchmark.py
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.109.133, 185.199.111.133, 185.199.108.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.109.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 4065 (4.0K) [text/plain]
+Saving to: ‘pytorch_synthetic_benchmark.py’
+
+     0K ...                                                   100% 55.1M=0s
+
+2022-06-29 15:58:31 (55.1 MB/s) - ‘pytorch_synthetic_benchmark.py’ saved [4065/4065]
+
+Model: resnet50
+Batch size: 256
+Number of GPUs: 1
+Running warmup...
+Running benchmark...
+Iter #0: 906.9 img/sec per GPU
+Iter #1: 907.1 img/sec per GPU
+Iter #2: 906.8 img/sec per GPU
+Iter #3: 906.8 img/sec per GPU
+Iter #4: 906.7 img/sec per GPU
+Iter #5: 906.7 img/sec per GPU
+Iter #6: 906.8 img/sec per GPU
+Iter #7: 906.6 img/sec per GPU
+Iter #8: 905.6 img/sec per GPU
+Iter #9: 907.2 img/sec per GPU
+Img/sec per GPU: 906.7 +-0.8
+Total img/sec on 1 GPU(s): 906.7 +-0.8
+Model: resnet50
+Batch size: 256
+Number of GPUs: 2
+Running warmup...
+Running benchmark...
+Iter #0: 913.7 img/sec per GPU
+Iter #1: 913.4 img/sec per GPU
+Iter #2: 913.4 img/sec per GPU
+Iter #3: 912.8 img/sec per GPU
+Iter #4: 913.2 img/sec per GPU
+Iter #5: 913.2 img/sec per GPU
+Iter #6: 913.1 img/sec per GPU
+Iter #7: 912.7 img/sec per GPU
+Iter #8: 911.8 img/sec per GPU
+Iter #9: 912.5 img/sec per GPU
+Img/sec per GPU: 913.0 +-1.0
+Total img/sec on 2 GPU(s): 1826.0 +-2.0
+Model: resnet50
+Batch size: 256
+Number of GPUs: 4
+Running warmup...
+Running benchmark...
+Iter #0: 911.8 img/sec per GPU
+Iter #1: 911.7 img/sec per GPU
+Iter #2: 911.7 img/sec per GPU
+Iter #3: 912.0 img/sec per GPU
+Iter #4: 911.7 img/sec per GPU
+Iter #5: 911.6 img/sec per GPU
+Iter #6: 911.3 img/sec per GPU
+Iter #7: 911.5 img/sec per GPU
+Iter #8: 911.1 img/sec per GPU
+Iter #9: 911.4 img/sec per GPU
+Img/sec per GPU: 911.6 +-0.5
+Total img/sec on 4 GPU(s): 3646.3 +-2.0
+Model: resnet50
+Batch size: 256
+Number of GPUs: 8
+Running warmup...
+Running benchmark...
+Iter #0: 910.4 img/sec per GPU
+Iter #1: 909.5 img/sec per GPU
+Iter #2: 910.0 img/sec per GPU
+Iter #3: 908.0 img/sec per GPU
+Iter #4: 909.1 img/sec per GPU
+Iter #5: 909.0 img/sec per GPU
+Iter #6: 909.0 img/sec per GPU
+Iter #7: 908.9 img/sec per GPU
+Iter #8: 907.5 img/sec per GPU
+Iter #9: 908.7 img/sec per GPU
+Img/sec per GPU: 909.0 +-1.6
+Total img/sec on 8 GPU(s): 7272.2 +-12.7
+Model: resnet50
+Batch size: 256
+Number of GPUs: 16
+Running warmup...
+Running benchmark...
+Iter #0: 890.9 img/sec per GPU
+Iter #1: 903.6 img/sec per GPU
+Iter #2: 903.5 img/sec per GPU
+Iter #3: 903.0 img/sec per GPU
+Iter #4: 903.0 img/sec per GPU
+Iter #5: 902.5 img/sec per GPU
+Iter #6: 903.4 img/sec per GPU
+Iter #7: 903.2 img/sec per GPU
+Iter #8: 902.9 img/sec per GPU
+Iter #9: 901.2 img/sec per GPU
+Img/sec per GPU: 901.7 +-7.2
+Total img/sec on 16 GPU(s): 14427.4 +-114.9
+Model: resnet50
+Batch size: 256
+Number of GPUs: 32
+Running warmup...
+Running benchmark...
+Iter #0: 885.7 img/sec per GPU
+Iter #1: 886.2 img/sec per GPU
+Iter #2: 883.2 img/sec per GPU
+Iter #3: 885.8 img/sec per GPU
+Iter #4: 886.1 img/sec per GPU
+Iter #5: 886.1 img/sec per GPU
+Iter #6: 885.7 img/sec per GPU
+Iter #7: 885.5 img/sec per GPU
+Iter #8: 885.3 img/sec per GPU
+Iter #9: 885.4 img/sec per GPU
+Img/sec per GPU: 885.5 +-1.6
+Total img/sec on 32 GPU(s): 28336.3 +-50.6
+Model: resnet50
+Batch size: 256
+Number of GPUs: 64
+Running warmup...
+Running benchmark...
+Iter #0: 893.5 img/sec per GPU
+Iter #1: 898.3 img/sec per GPU
+Iter #2: 897.3 img/sec per GPU
+Iter #3: 886.4 img/sec per GPU
+Iter #4: 896.3 img/sec per GPU
+Iter #5: 893.1 img/sec per GPU
+Iter #6: 898.4 img/sec per GPU
+Iter #7: 897.1 img/sec per GPU
+Iter #8: 892.6 img/sec per GPU
+Iter #9: 890.1 img/sec per GPU
+Img/sec per GPU: 894.3 +-7.3
+Total img/sec on 64 GPU(s): 57236.7 +-467.0
+Model: resnet50
+Batch size: 256
+Number of GPUs: 128
+Running warmup...
+Running benchmark...
+Iter #0: 888.3 img/sec per GPU
+Iter #1: 881.5 img/sec per GPU
+Iter #2: 887.4 img/sec per GPU
+Iter #3: 883.1 img/sec per GPU
+Iter #4: 881.8 img/sec per GPU
+Iter #5: 879.7 img/sec per GPU
+Iter #6: 888.1 img/sec per GPU
+Iter #7: 886.9 img/sec per GPU
+Iter #8: 886.6 img/sec per GPU
+Iter #9: 887.6 img/sec per GPU
+Img/sec per GPU: 885.1 +-6.0
+Total img/sec on 128 GPU(s): 113290.8 +-764.2
+[[1.000000e+00 9.067000e+02 8.000000e-01]
+ [2.000000e+00 1.826000e+03 2.000000e+00]
+ [4.000000e+00 3.646300e+03 2.000000e+00]
+ [8.000000e+00 7.272200e+03 1.270000e+01]
+ [1.600000e+01 1.442740e+04 1.149000e+02]
+ [3.200000e+01 2.833630e+04 5.060000e+01]
+ [6.400000e+01 5.723670e+04 4.670000e+02]
+ [1.280000e+02 1.132908e+05 7.642000e+02]]
