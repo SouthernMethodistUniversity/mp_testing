@@ -17,8 +17,7 @@ INSTALL_PREFIX=$HOME/conda_tensorflow_2.9.1+cuda_11.4.4+horovod_0.25.0
 BATCH_SIZE=256
 
 # pull the test file from github
-# TODO: track seperately? Or at least a specific hash?
-wget https://raw.githubusercontent.com/horovod/horovod/master/examples/tensorflow2/tensorflow2_synthetic_benchmark.py
+wget https://raw.githubusercontent.com/horovod/horovod/c7bc877c6f80399b715bee068b7846ef9d229c51/examples/tensorflow2/tensorflow2_synthetic_benchmark.py
 
 module purge
 
