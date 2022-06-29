@@ -1,3 +1,4 @@
+import argparse
 import numpy as np
 import matplotlib.pyplot as plt
 import sys
@@ -8,7 +9,18 @@ if len(sys.argv) <= 1:
     print('graph_scaling.py input_file')
     exit(1)
 
-input_file = sys.argv[1]
+parser = argparse.ArgumentParser(description='Graph Scaling Plotter',
+                                 formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+
+parser.add_argument('input_file', type=str, default='',
+                    help='input CSV file with data')
+
+parser.add_argument('--title', type=str, default='Experimental Scaling Results',
+                    help='title for plot')
+
+args = parser.parse_args()
+
+input_file = args.input_file
 
 filepath = Path(input_file)
 output = filepath.with_suffix('').with_suffix('.png')
@@ -34,7 +46,7 @@ ax.set_ylabel('Images per second')
 ax.set_xlabel('Number of GPUs')
 ax.set_xticks(tests)
 ax.set_xticklabels(n_gpus)
-ax.set_title('Horovod Tensorflow Synthetic Test')
+ax.set_title(args.title)
 ax.yaxis.grid(True)
 plt.legend()
 # Save the figure

@@ -93,7 +93,7 @@ do
 done
 
 # TODO: fixed path?
-python ../common/graph_scaling.py output/scaling_$SLURM_JOB_ID.txt
+python ../common/graph_scaling.py output/scaling_$SLURM_JOB_ID.txt --title "Horovod TensorFlow Synthetic Test"
 
 # delete tmp file and benchmark
 rm tensorflow2_synthetic_benchmark.py
