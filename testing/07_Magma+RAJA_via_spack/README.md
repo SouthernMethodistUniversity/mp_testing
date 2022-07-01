@@ -68,10 +68,10 @@ Load modules for building
 
 ```
 # for HPC-X MPI Bundled with NVHPC (currently the best working MPI)
-module use /hpc/superpod/testing/nvidia/hpc_sdk_22.5/Linux_x86_64/22.5/comm_libs/hpcx/hpcx-2.11/modulefiles/
-# for Spack installs
-. /hpc/superpod/testing/spack/share/spack/setup-env.sh
-module load gcc-10.3.0-gcc-9.4.0-5skxfbd 
+module use /hpc/mp/modules/
+# for Spack installs (for system install. If installed as above, then that spack can be sourced
+. /hpc/mp/spack/share/spack/setup-env.sh 
+module load gcc-10.3.0-gcc-9.4.0-d44jwah
 source <( spack module tcl loads --dependencies raja)
 module load hpcx 
 ```
