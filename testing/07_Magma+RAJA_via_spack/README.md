@@ -45,7 +45,7 @@ From `magma/example` the examples can be run like (note ``tcl loads`` works, but
 
 ```
 srun --cpus-per-task=32 -t 00:10:00 --gres=gpu:1 --pty bash
-module load gcc-10.3.0-gcc-9.4.0-5skxfbd 
+module load gcc-10.3.0-gcc-9.4.0-d44jwah
 source <( spack module tcl loads --dependencies magma)
 make all
 
