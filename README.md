@@ -2,6 +2,8 @@
 
 **All code in this repo is for testing. The code may not work and may change. Pull requests and issues welcome.**
 
+See [Quick Start Notes](quick_start_notes.md) for a short overview of MP usage.
+
 ## Usage Example
 
 ```sh
