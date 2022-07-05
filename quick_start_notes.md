@@ -103,3 +103,5 @@ M2 home directory from SuperPod: `$M2HOME`
 subject to purging (policy TBD --- likely to automatically 
 purge data older than 30 or 60 days and enforce space quotas.)
 
+M2 `$SCRATCH` is not currently accessible from the SuperPod
+
