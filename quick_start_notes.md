@@ -44,7 +44,7 @@ This software is available though the module system after calling
 Especially for testing, we recommend that you install Miniconda
 locally (https://docs.conda.io/en/latest/miniconda.html.) 
 
-Packages that highly configuration depenendent, e.g. ``mpi4py``
+Packages that are highly configuration depenendent, e.g. ``mpi4py``
 should be installed with `pip`, e.g.
 
 ```
