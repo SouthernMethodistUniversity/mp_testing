@@ -37,7 +37,8 @@ This software is available though the module system after calling
 - [01_spack](testing/01_spack) LAMMPS and NVHPC as Spack environments
 - [05_openmm](testing/05_openmm) OpenMM via Spack environmnet
 - [08_pytorch](testing/08_pytorch) PyTorch via Spack environment
-- [07_Magma+RAJA_via_spack](testing/07_Magma+RAJA_via_spack) RAJA and Magma install and tests from Spack
+- [07_Magma+RAJA_via_spack](testing/07_Magma+RAJA_via_spack) RAJA and Magma 
+  install and tests from Spack
 
 ## Conda:
 
@@ -82,7 +83,8 @@ pkgs_dirs:
 
 ### Related Testing Notes and Scripts
 
-- [10_conda](testing/10_conda) Example setup of Conda environments with PyTorch and TensorFlow, both with Horovod.
+- [10_conda](testing/10_conda) Example setup of Conda environments with  
+  PyTorch and TensorFlow, both with Horovod.
 
 ## Storage and M2 Access
 
@@ -99,5 +101,5 @@ M2 home directory from SuperPod: `$M2HOME`
 
 `$SCRATCH` and local disk space on the SuperPod is 
 subject to purging (policy TBD --- likely to automatically 
-purge data older than 30 days and enforce space quotas.)
+purge data older than 30 or 60 days and enforce space quotas.)
 
