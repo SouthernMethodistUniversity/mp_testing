@@ -17,6 +17,12 @@ It is sometimes necessary to set the network interfaces (we're investigating):
 export UCX_NET_DEVICES=mlx5_0:1,mlx5_1:1,mlx5_2:1,mlx5_3:1,mlx5_6:1,mlx5_7:1,mlx5_8:1,mlx5_9:1
 ```
 
+### Related Testing Notes and Scripts
+
+- [02_nvhpc+nccl](testing/02_nvhpc+nccl) Nvidia NCCL tests with MPI enabled
+- [06_mpi](testing/06_mpi) Notes about (mostly) failed installs of MPI
+- [09_container_mpi](testing/09_container_mpi) MPI in a container
+
 ## Spack Installs:
 
 We are currently using Spack to install most software stacks.
@@ -25,6 +31,13 @@ This software is available though the module system after calling
 ```
 . /hpc/mp/spack/share/spack/setup-env.sh 
 ```
+
+### Related Testing Notes and Scripts
+
+- [01_spack](testing/01_spack) LAMMPS and NVHPC as Spack environments
+- [05_openmm](testing/05_openmm) OpenMM via Spack environmnet
+- [08_pytorch](testing/08_pytorch) PyTorch via Spack environment
+- [07_Magma+RAJA_via_spack](testing/07_Magma+RAJA_via_spack) RAJA and Magma install and tests from Spack
 
 ## Conda:
 
@@ -66,6 +79,10 @@ envs_dirs:
 pkgs_dirs:
   - $HOME/.conda/pkgs
 ```
+
+### Related Testing Notes and Scripts
+
+- [10_conda](testing/10_conda) Example setup of Conda environments with PyTorch and TensorFlow, both with Horovod.
 
 ## Storage and M2 Access
 
